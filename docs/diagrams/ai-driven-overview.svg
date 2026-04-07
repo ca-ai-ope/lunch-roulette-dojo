@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 480" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#475569"/>
+    </marker>
+    <filter id="sh" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="820" height="480" rx="12" fill="#f8fafc"/>
+  <text x="410" y="36" text-anchor="middle" font-size="20" font-weight="bold" fill="#0f172a">Phase 4: AI駆動開発 — ナビゲーション構造</text>
+  <text x="410" y="56" text-anchor="middle" font-size="13" fill="#64748b">人間が目的地（Why/What）を握り、AI がルート（How）を提案・実行する</text>
+
+  <!-- Human side -->
+  <rect x="30" y="80" width="250" height="150" rx="12" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2" filter="url(#sh)"/>
+  <text x="155" y="105" text-anchor="middle" font-size="15" font-weight="bold" fill="#6d28d9">Human（ドライバー）</text>
+  <text x="155" y="128" text-anchor="middle" font-size="12" fill="#7c3aed">Why / What を定義する</text>
+  <text x="155" y="148" text-anchor="middle" font-size="12" fill="#7c3aed">CLAUDE.md を育成する</text>
+  <text x="155" y="168" text-anchor="middle" font-size="12" fill="#7c3aed">計画を承認する</text>
+  <text x="155" y="188" text-anchor="middle" font-size="12" fill="#7c3aed">受け入れ条件を検証する</text>
+  <text x="155" y="210" text-anchor="middle" font-size="12" fill="#7c3aed">REQUIREMENT.md は人間が管理</text>
+
+  <!-- AI side -->
+  <rect x="540" y="80" width="250" height="150" rx="12" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" filter="url(#sh)"/>
+  <text x="665" y="105" text-anchor="middle" font-size="15" font-weight="bold" fill="#0369a1">AI（ナビゲーター）</text>
+  <text x="665" y="128" text-anchor="middle" font-size="12" fill="#0284c7">How を提案・実装する</text>
+  <text x="665" y="148" text-anchor="middle" font-size="12" fill="#0284c7">ドキュメントを順番に読む</text>
+  <text x="665" y="168" text-anchor="middle" font-size="12" fill="#0284c7">計画を提示し承認を待つ</text>
+  <text x="665" y="188" text-anchor="middle" font-size="12" fill="#0284c7">CONTEXT.json を更新する</text>
+  <text x="665" y="210" text-anchor="middle" font-size="12" fill="#0284c7">Hooks / Rules に従う</text>
+
+  <!-- Arrow between -->
+  <line x1="280" y1="140" x2="535" y2="140" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="408" y="133" text-anchor="middle" font-size="11" fill="#64748b">意図を伝える</text>
+  <line x1="535" y1="170" x2="280" y2="170" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="408" y="187" text-anchor="middle" font-size="11" fill="#64748b">計画を提案 / 承認を求める</text>
+
+  <!-- 4 documents -->
+  <rect x="30" y="280" width="170" height="80" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" filter="url(#sh)"/>
+  <text x="115" y="306" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">CLAUDE.md</text>
+  <text x="115" y="325" text-anchor="middle" font-size="10" fill="#a16207">長期記憶</text>
+  <text x="115" y="342" text-anchor="middle" font-size="10" fill="#a16207">ロール・ルール・境界</text>
+
+  <rect x="220" y="280" width="170" height="80" rx="10" fill="#fce7f3" stroke="#ec4899" stroke-width="2" filter="url(#sh)"/>
+  <text x="305" y="306" text-anchor="middle" font-size="13" font-weight="bold" fill="#9d174d">PROJECT_RULES.md</text>
+  <text x="305" y="325" text-anchor="middle" font-size="10" fill="#be185d">交通ルール</text>
+  <text x="305" y="342" text-anchor="middle" font-size="10" fill="#be185d">技術規約・命名・禁止</text>
+
+  <rect x="420" y="280" width="170" height="80" rx="10" fill="#d1fae5" stroke="#10b981" stroke-width="2" filter="url(#sh)"/>
+  <text x="505" y="306" text-anchor="middle" font-size="13" font-weight="bold" fill="#065f46">CONTEXT.json</text>
+  <text x="505" y="325" text-anchor="middle" font-size="10" fill="#047857">走行ログ・現在地</text>
+  <text x="505" y="342" text-anchor="middle" font-size="10" fill="#047857">進捗・判断・ファイル記録</text>
+
+  <rect x="620" y="280" width="170" height="80" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" filter="url(#sh)"/>
+  <text x="705" y="306" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">REQUIREMENT.md</text>
+  <text x="705" y="325" text-anchor="middle" font-size="10" fill="#2563eb">目的地の住所</text>
+  <text x="705" y="342" text-anchor="middle" font-size="10" fill="#2563eb">ストーリー単位の仕様</text>
+
+  <!-- Reading order arrow -->
+  <text x="410" y="395" text-anchor="middle" font-size="12" font-weight="bold" fill="#475569">AI の読み込み順序</text>
+  <line x1="115" y1="365" x2="115" y2="405" stroke="#f59e0b" stroke-width="2"/>
+  <text x="115" y="420" text-anchor="middle" font-size="14" font-weight="bold" fill="#f59e0b">1</text>
+  <line x1="145" y1="410" x2="270" y2="410" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="305" y1="365" x2="305" y2="405" stroke="#ec4899" stroke-width="2"/>
+  <text x="305" y="420" text-anchor="middle" font-size="14" font-weight="bold" fill="#ec4899">2</text>
+  <line x1="340" y1="410" x2="465" y2="410" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="505" y1="365" x2="505" y2="405" stroke="#10b981" stroke-width="2"/>
+  <text x="505" y="420" text-anchor="middle" font-size="14" font-weight="bold" fill="#10b981">3</text>
+  <line x1="540" y1="410" x2="665" y2="410" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="705" y1="365" x2="705" y2="405" stroke="#3b82f6" stroke-width="2"/>
+  <text x="705" y="420" text-anchor="middle" font-size="14" font-weight="bold" fill="#3b82f6">4</text>
+
+  <!-- Hooks badge -->
+  <rect x="280" y="442" width="260" height="30" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="410" y="462" text-anchor="middle" font-size="11" font-weight="bold" fill="#dc2626">Hooks: 6+ ガードレールが自動で保護</text>
+</svg>

@@ -130,6 +130,10 @@ claude
 └── tailwind.config.ts
 ```
 
+**全体像**:
+
+![SDD全体像](docs/diagrams/sdd-overview.svg)
+
 **進め方**: Specify → Plan → Tasks → Implement の4ステップ。
 途中で仕様変更を投入し、SPEC.md を更新してからAIに修正させる体験がポイント。
 
@@ -192,6 +196,18 @@ CLAUDE.md を「長期記憶」、CONTEXT.json を「状態管理」として活
 ├── package.json                 # Next.js 14 + React 18 + Tailwind CSS
 └── tailwind.config.ts
 ```
+
+**ナビゲーション構造（Human と AI の役割分担）**:
+
+![AI駆動開発 構造](docs/diagrams/ai-driven-overview.svg)
+
+**ワークフロー（スキル連携）**:
+
+![AI駆動開発 ワークフロー](docs/diagrams/ai-driven-workflow.svg)
+
+**スキル詳細（各スキルが操作するファイル）**:
+
+![AI駆動開発 スキル詳細](docs/diagrams/ai-driven-skills-detail.svg)
 
 **進め方**:
 1. 目的地確認 → 2. CLAUDE.md 育成 → 3. `/start` で実装 → 4. `/finish` で完了記録

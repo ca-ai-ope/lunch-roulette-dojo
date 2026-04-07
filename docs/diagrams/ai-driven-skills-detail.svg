@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 720" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <filter id="sd" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="820" height="720" rx="12" fill="#f8fafc"/>
+  <text x="410" y="36" text-anchor="middle" font-size="20" font-weight="bold" fill="#0f172a">AI駆動開発 スキル詳細 + 操作するファイル</text>
+  <text x="410" y="56" text-anchor="middle" font-size="13" fill="#64748b">各スキルが何を読み・何を書くかの対応図</text>
+
+  <!-- /story detail -->
+  <rect x="30" y="75" width="370" height="140" rx="12" fill="#faf5ff" stroke="#a855f7" stroke-width="2" filter="url(#sd)"/>
+  <rect x="42" y="85" width="72" height="26" rx="6" fill="#a855f7"/>
+  <text x="78" y="103" text-anchor="middle" font-size="12" font-weight="bold" fill="white">/story</text>
+  <text x="130" y="103" font-size="12" font-weight="bold" fill="#7e22ce">新ストーリー作成</text>
+  <text x="45" y="125" font-size="11" fill="#6b21a8">使い方:</text>
+  <text x="45" y="142" font-size="11" fill="#6b21a8" font-style="italic">/story 投票機能がほしい</text>
+  <line x1="45" y1="152" x2="380" y2="152" stroke="#d8b4fe" stroke-width="0.5"/>
+  <text x="45" y="168" font-size="10" fill="#7e22ce">読む: 全 CONTEXT.json（既存ストーリー把握）</text>
+  <text x="45" y="184" font-size="10" fill="#7e22ce">書く: stories/story-XXX/REQUIREMENT.md</text>
+  <text x="45" y="200" font-size="10" fill="#7e22ce">書く: stories/story-XXX/CONTEXT.json（pending）</text>
+
+  <!-- Files touched by /story -->
+  <rect x="430" y="85" width="360" height="60" rx="8" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="445" y="105" font-size="10" font-weight="bold" fill="#6d28d9">生成されるファイル:</text>
+  <text x="445" y="120" font-size="10" fill="#7c3aed" font-family="monospace">stories/story-XXX/REQUIREMENT.md</text>
+  <text x="445" y="135" font-size="10" fill="#7c3aed" font-family="monospace">stories/story-XXX/CONTEXT.json  {"status": "pending"}</text>
+
+  <!-- /start detail -->
+  <rect x="30" y="230" width="370" height="175" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#sd)"/>
+  <rect x="42" y="240" width="66" height="26" rx="6" fill="#3b82f6"/>
+  <text x="75" y="258" text-anchor="middle" font-size="12" font-weight="bold" fill="white">/start</text>
+  <text x="125" y="258" font-size="12" font-weight="bold" fill="#1e40af">実装開始</text>
+  <text x="45" y="280" font-size="11" fill="#1e40af">使い方:</text>
+  <text x="45" y="297" font-size="11" fill="#1e40af" font-style="italic">/start</text>
+  <text x="110" y="297" font-size="10" fill="#64748b">（自動で pending/in_progress を選択）</text>
+  <text x="45" y="314" font-size="11" fill="#1e40af" font-style="italic">/start story-003</text>
+  <text x="175" y="314" font-size="10" fill="#64748b">（番号指定も可）</text>
+  <line x1="45" y1="324" x2="380" y2="324" stroke="#93c5fd" stroke-width="0.5"/>
+  <text x="45" y="340" font-size="10" fill="#2563eb">読む: CLAUDE.md → PROJECT_RULES.md</text>
+  <text x="45" y="356" font-size="10" fill="#2563eb">読む: 全 CONTEXT.json → 対象 REQUIREMENT.md</text>
+  <text x="45" y="372" font-size="10" fill="#2563eb">書く: src/components/ , src/hooks/ , src/lib/ , src/app/</text>
+  <text x="45" y="388" font-size="10" fill="#2563eb">書く: CONTEXT.json（status → "in_progress"）</text>
+
+  <!-- Files touched by /start -->
+  <rect x="430" y="240" width="360" height="100" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="445" y="260" font-size="10" font-weight="bold" fill="#1e40af">AI の動き:</text>
+  <text x="445" y="278" font-size="10" fill="#2563eb">1. ドキュメントを順番に読み込む</text>
+  <text x="445" y="293" font-size="10" fill="#2563eb">2. 受け入れ条件をチェックリスト表示</text>
+  <text x="445" y="308" font-size="10" fill="#2563eb">3. 新規/変更ファイルの計画を提示</text>
+  <text x="445" y="323" font-size="10" fill="#2563eb">4. Human 承認後 → コード生成開始</text>
+
+  <!-- /progress detail -->
+  <rect x="30" y="420" width="370" height="110" rx="12" fill="#fefce8" stroke="#eab308" stroke-width="2" filter="url(#sd)"/>
+  <rect x="42" y="430" width="84" height="26" rx="6" fill="#eab308"/>
+  <text x="84" y="448" text-anchor="middle" font-size="12" font-weight="bold" fill="white">/progress</text>
+  <text x="145" y="448" font-size="12" font-weight="bold" fill="#a16207">途中確認（任意）</text>
+  <text x="45" y="470" font-size="11" fill="#a16207">使い方:</text>
+  <text x="45" y="487" font-size="11" fill="#a16207" font-style="italic">/progress</text>
+  <text x="120" y="487" font-size="10" fill="#64748b">（実装中いつでも）</text>
+  <line x1="45" y1="497" x2="380" y2="497" stroke="#fde68a" stroke-width="0.5"/>
+  <text x="45" y="513" font-size="10" fill="#92400e">読む: CONTEXT.json + REQUIREMENT.md（受入条件の進捗）</text>
+
+  <!-- Files touched by /progress -->
+  <rect x="430" y="430" width="360" height="55" rx="8" fill="#fefce8" stroke="#fde68a" stroke-width="1.5"/>
+  <text x="445" y="450" font-size="10" font-weight="bold" fill="#92400e">表示内容:</text>
+  <text x="445" y="468" font-size="10" fill="#a16207">ストーリーの状態 + 受け入れ条件の ✅/☐ 一覧</text>
+  <text x="445" y="478" font-size="10" fill="#a16207"></text>
+
+  <!-- /finish detail -->
+  <rect x="30" y="545" width="370" height="160" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" filter="url(#sd)"/>
+  <rect x="42" y="555" width="72" height="26" rx="6" fill="#16a34a"/>
+  <text x="78" y="573" text-anchor="middle" font-size="12" font-weight="bold" fill="white">/finish</text>
+  <text x="130" y="573" font-size="12" font-weight="bold" fill="#15803d">完了処理</text>
+  <text x="45" y="595" font-size="11" fill="#15803d">使い方:</text>
+  <text x="45" y="612" font-size="11" fill="#15803d" font-style="italic">/finish</text>
+  <text x="100" y="612" font-size="10" fill="#64748b">（実装完了後に実行）</text>
+  <line x1="45" y1="622" x2="380" y2="622" stroke="#86efac" stroke-width="0.5"/>
+  <text x="45" y="638" font-size="10" fill="#166534">実行: npx tsc --noEmit（型チェック）</text>
+  <text x="45" y="654" font-size="10" fill="#166534">実行: node scripts/check-code.mjs（品質チェック）</text>
+  <text x="45" y="670" font-size="10" fill="#166534">検証: 受入条件を 1 つずつ ✅ / ❌ 判定</text>
+  <text x="45" y="686" font-size="10" fill="#166534">書く: CONTEXT.json（completed + files + decisions）</text>
+  <text x="45" y="698" font-size="10" fill="#166534">確認: Human に更新結果を表示</text>
+
+  <!-- Files touched by /finish -->
+  <rect x="430" y="555" width="360" height="120" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="445" y="575" font-size="10" font-weight="bold" fill="#166534">CONTEXT.json の更新内容:</text>
+  <text x="445" y="595" font-size="10" fill="#047857" font-family="monospace">status: "completed"</text>
+  <text x="445" y="612" font-size="10" fill="#047857" font-family="monospace">created_files: ["src/hooks/useVote.ts"]</text>
+  <text x="445" y="629" font-size="10" fill="#047857" font-family="monospace">modified_files: ["src/components/..."]</text>
+  <text x="445" y="646" font-size="10" fill="#047857" font-family="monospace">acceptance_criteria: {各項目: true}</text>
+  <text x="445" y="663" font-size="10" fill="#047857" font-family="monospace">decisions: [{判断と理由}]</text>
+</svg>

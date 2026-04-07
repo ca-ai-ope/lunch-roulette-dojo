@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 600" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#475569"/>
+    </marker>
+    <marker id="a-grn" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <filter id="s" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="820" height="600" rx="12" fill="#f8fafc"/>
+  <text x="410" y="36" text-anchor="middle" font-size="20" font-weight="bold" fill="#0f172a">AI駆動開発 ワークフロー（スキル連携）</text>
+  <text x="410" y="56" text-anchor="middle" font-size="13" fill="#64748b">/story → /start → /progress → /finish の流れ</text>
+
+  <!-- /story -->
+  <rect x="40" y="80" width="340" height="110" rx="12" fill="#faf5ff" stroke="#a855f7" stroke-width="2" filter="url(#s)"/>
+  <rect x="52" y="90" width="72" height="28" rx="6" fill="#a855f7"/>
+  <text x="88" y="109" text-anchor="middle" font-size="13" font-weight="bold" fill="white">/story</text>
+  <text x="200" y="109" text-anchor="start" font-size="12" font-weight="bold" fill="#7e22ce">新ストーリー作成（任意）</text>
+  <text x="60" y="135" font-size="11" fill="#6b21a8">1. 既存ストーリーの状態を確認</text>
+  <text x="60" y="153" font-size="11" fill="#6b21a8">2. 要件を Why / What / How / Edge Cases に構造化</text>
+  <text x="60" y="171" font-size="11" fill="#6b21a8">3. REQUIREMENT.md + CONTEXT.json を生成</text>
+
+  <!-- Output of /story -->
+  <rect x="420" y="90" width="170" height="40" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="505" y="115" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">REQUIREMENT.md 生成</text>
+  <rect x="620" y="90" width="160" height="40" rx="8" fill="#d1fae5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="700" y="115" text-anchor="middle" font-size="11" font-weight="bold" fill="#065f46">CONTEXT.json 生成</text>
+  <line x1="380" y1="115" x2="415" y2="115" stroke="#475569" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="590" y1="110" x2="615" y2="110" stroke="#475569" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Arrow down -->
+  <line x1="210" y1="190" x2="210" y2="220" stroke="#475569" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- /start -->
+  <rect x="40" y="225" width="740" height="140" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#s)"/>
+  <rect x="52" y="235" width="66" height="28" rx="6" fill="#3b82f6"/>
+  <text x="85" y="254" text-anchor="middle" font-size="13" font-weight="bold" fill="white">/start</text>
+  <text x="200" y="254" text-anchor="start" font-size="12" font-weight="bold" fill="#1e40af">実装開始（メインスキル）</text>
+
+  <!-- /start steps as flow -->
+  <rect x="60" y="275" width="140" height="38" rx="8" fill="#bfdbfe" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="130" y="290" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e40af">1. ドキュメント読込</text>
+  <text x="130" y="304" text-anchor="middle" font-size="9" fill="#2563eb">CLAUDE.md → RULES</text>
+
+  <line x1="200" y1="294" x2="225" y2="294" stroke="#475569" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="230" y="275" width="130" height="38" rx="8" fill="#bfdbfe" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="295" y="290" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e40af">2. 受入条件確認</text>
+  <text x="295" y="304" text-anchor="middle" font-size="9" fill="#2563eb">REQUIREMENT.md</text>
+
+  <line x1="360" y1="294" x2="385" y2="294" stroke="#475569" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="390" y="275" width="120" height="38" rx="8" fill="#bfdbfe" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="450" y="290" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e40af">3. 計画を提示</text>
+  <text x="450" y="304" text-anchor="middle" font-size="9" fill="#2563eb">新規/変更ファイル</text>
+
+  <line x1="510" y1="294" x2="535" y2="294" stroke="#475569" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="540" y="275" width="100" height="38" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="590" y="290" text-anchor="middle" font-size="10" font-weight="bold" fill="#92400e">4. 承認待ち</text>
+  <text x="590" y="304" text-anchor="middle" font-size="9" fill="#a16207">Human が確認</text>
+
+  <line x1="640" y1="294" x2="665" y2="294" stroke="#475569" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="670" y="275" width="95" height="38" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="717" y="290" text-anchor="middle" font-size="10" font-weight="bold" fill="#15803d">5. 実装開始</text>
+  <text x="717" y="304" text-anchor="middle" font-size="9" fill="#16a34a">コード生成</text>
+
+  <!-- Implementation zone -->
+  <rect x="60" y="325" width="705" height="28" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="410" y="344" text-anchor="middle" font-size="11" fill="#16a34a">実装中... src/components/ , src/hooks/ , src/lib/ を AI が編集</text>
+
+  <!-- Arrow down -->
+  <line x1="410" y1="365" x2="410" y2="395" stroke="#475569" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- /progress (side) -->
+  <rect x="580" y="378" width="200" height="55" rx="10" fill="#fefce8" stroke="#eab308" stroke-width="1.5" filter="url(#s)"/>
+  <rect x="592" y="388" width="84" height="24" rx="6" fill="#eab308"/>
+  <text x="634" y="405" text-anchor="middle" font-size="12" font-weight="bold" fill="white">/progress</text>
+  <text x="680" y="420" text-anchor="middle" font-size="10" fill="#a16207">進捗・残タスク確認（任意）</text>
+  <!-- Arrow from implementation -->
+  <line x1="530" y1="345" x2="590" y2="390" stroke="#eab308" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#a)"/>
+
+  <!-- /finish -->
+  <rect x="40" y="400" width="520" height="185" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" filter="url(#s)"/>
+  <rect x="52" y="410" width="72" height="28" rx="6" fill="#16a34a"/>
+  <text x="88" y="429" text-anchor="middle" font-size="13" font-weight="bold" fill="white">/finish</text>
+  <text x="200" y="429" text-anchor="start" font-size="12" font-weight="bold" fill="#15803d">完了処理</text>
+
+  <!-- /finish steps -->
+  <rect x="60" y="450" width="150" height="34" rx="7" fill="#bbf7d0" stroke="#4ade80" stroke-width="1"/>
+  <text x="135" y="472" text-anchor="middle" font-size="10" font-weight="bold" fill="#166534">1. TypeScript 型チェック</text>
+
+  <line x1="210" y1="467" x2="225" y2="467" stroke="#16a34a" stroke-width="1.5" marker-end="url(#a-grn)"/>
+
+  <rect x="230" y="450" width="150" height="34" rx="7" fill="#bbf7d0" stroke="#4ade80" stroke-width="1"/>
+  <text x="305" y="472" text-anchor="middle" font-size="10" font-weight="bold" fill="#166534">2. コード品質チェック</text>
+
+  <line x1="380" y1="467" x2="395" y2="467" stroke="#16a34a" stroke-width="1.5" marker-end="url(#a-grn)"/>
+
+  <rect x="400" y="450" width="145" height="34" rx="7" fill="#bbf7d0" stroke="#4ade80" stroke-width="1"/>
+  <text x="472" y="472" text-anchor="middle" font-size="10" font-weight="bold" fill="#166534">3. 受入条件を検証</text>
+
+  <rect x="60" y="498" width="230" height="34" rx="7" fill="#bbf7d0" stroke="#4ade80" stroke-width="1"/>
+  <text x="175" y="520" text-anchor="middle" font-size="10" font-weight="bold" fill="#166534">4. CONTEXT.json を更新</text>
+  <text x="175" y="528" text-anchor="middle" font-size="0" fill="#166534"></text>
+
+  <line x1="290" y1="515" x2="305" y2="515" stroke="#16a34a" stroke-width="1.5" marker-end="url(#a-grn)"/>
+
+  <rect x="310" y="498" width="235" height="34" rx="7" fill="#d1fae5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="427" y="520" text-anchor="middle" font-size="10" font-weight="bold" fill="#065f46">status: completed + files + decisions</text>
+
+  <!-- Final output -->
+  <rect x="60" y="545" width="490" height="30" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="305" y="565" text-anchor="middle" font-size="11" font-weight="bold" fill="#92400e">5. 結果を Human に表示 → 確認・承認</text>
+
+  <!-- Legend -->
+  <rect x="580" y="460" width="200" height="120" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="680" y="480" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">凡例</text>
+  <rect x="595" y="490" width="14" height="14" rx="3" fill="#ede9fe" stroke="#a855f7" stroke-width="1"/>
+  <text x="618" y="502" font-size="10" fill="#475569">/story（任意）</text>
+  <rect x="595" y="510" width="14" height="14" rx="3" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="618" y="522" font-size="10" fill="#475569">/start（メイン）</text>
+  <rect x="595" y="530" width="14" height="14" rx="3" fill="#fefce8" stroke="#eab308" stroke-width="1"/>
+  <text x="618" y="542" font-size="10" fill="#475569">/progress（途中確認）</text>
+  <rect x="595" y="550" width="14" height="14" rx="3" fill="#f0fdf4" stroke="#16a34a" stroke-width="1"/>
+  <text x="618" y="562" font-size="10" fill="#475569">/finish（完了処理）</text>
+</svg>
