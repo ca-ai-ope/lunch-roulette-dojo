@@ -23,7 +23,7 @@ PROJECT_RULES.md・CONTEXT.json を使ってAIを自律的に動かします。
 ## セットアップ
 
 ```bash
-cd repos/3-ai-driven
+cd 3-ai-driven
 npm install
 claude
 ```

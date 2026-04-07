@@ -25,7 +25,7 @@ GitHub Spec Kit が示す **Specify → Plan → Tasks → Implement** の縮約
 ## セットアップ
 
 ```bash
-cd repos/2-sdd
+cd 2-sdd
 npm install
 claude
 ```
@@ -219,7 +219,7 @@ Claude Code で `/` を入力するとスキル一覧が表示されます。
 
 ## 次のPhaseへ
 
-Phase 3 の振り返りが終わったら、**ファシリテーターの指示で** `repos/3-ai-driven/` に移動します。
+Phase 3 の振り返りが終わったら、**ファシリテーターの指示で** `3-ai-driven/` に移動します。
 
 ```bash
 cd ../3-ai-driven
