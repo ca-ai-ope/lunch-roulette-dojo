@@ -1,0 +1,31 @@
+{
+  "story": "001-roulette",
+  "title": "ランチルーレット基本機能",
+  "status": "completed",
+
+  "created_files": [
+    "src/app/page.tsx",
+    "src/app/layout.tsx",
+    "src/components/RestaurantCard.tsx",
+    "src/components/RestaurantList.tsx",
+    "src/components/Roulette.tsx",
+    "src/lib/storage.ts",
+    "src/lib/types.ts",
+    "src/data/restaurants.ts"
+  ],
+  "modified_files": [],
+
+  "acceptance_criteria": {
+    "お店一覧が表示される": true,
+    "5件のお店が登録されている": true,
+    "ルーレットでランダムに1件選べる": true,
+    "リロードしてもデータが保持される": true
+  },
+
+  "decisions": [
+    {
+      "what": "データ保存に localStorage を採用",
+      "why": "DB禁止の制約あり。チーム内利用のためブラウザ間同期は不要"
+    }
+  ]
+}

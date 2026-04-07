@@ -1,0 +1,20 @@
+{
+  "story": "002-voting",
+  "title": "投票機能",
+  "status": "pending",
+
+  "created_files": [],
+  "modified_files": [],
+
+  "acceptance_criteria": {
+    "投票ボタンが表示される": false,
+    "投票済み状態が表示される": false,
+    "投票数が即座に反映される": false,
+    "取り消しができる": false,
+    "同じお店に2回投票できない": false,
+    "リロードしても投票が保持される": false,
+    "ルーレット機能が壊れていない": false
+  },
+
+  "decisions": []
+}

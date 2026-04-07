@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(npm run dev)",
+      "Bash(npm run build)",
+      "Read",
+      "Glob",
+      "Grep"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ ! -f SPEC.md ]; then echo '⚠️ SPEC.md が存在しません。先に SPEC.md を作成してください。' >&2; elif grep -q '→ （' SPEC.md; then echo '⚠️ SPEC.md の Edge Cases が未記入です。先に穴埋めを完成させてください。（Edge Cases の選択肢を決めてから実装に入りましょう）' >&2; fi"
+          },
+          {
+            "type": "command",
+            "command": "if grep -q '<!-- Phase 3' CLAUDE.md 2>/dev/null; then echo '💡 ヒント: CLAUDE.md がまだプレースホルダーです。SSoT指示を追記すると、AIが自動でSPEC.mdを参照するようになります。（prompts/01-specify.md の後半を参照）' >&2; fi"
+          }
+        ]
+      }
+    ]
+  }
+}

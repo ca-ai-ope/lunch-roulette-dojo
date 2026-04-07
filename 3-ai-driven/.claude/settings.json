@@ -1,0 +1,71 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install*)",
+      "Bash(npm run*)",
+      "Bash(npx *)",
+      "Bash(node scripts/*)",
+      "Bash(mkdir *)",
+      "Bash(ls *)",
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if grep -q '<!-- Phase 4' CLAUDE.md 2>/dev/null; then echo '💡 ヒント: CLAUDE.md がまだプレースホルダーです。AI駆動開発版に育ててください。（prompts/phase4-ai-driven.md のステップ2 参照）' >&2; fi"
+          },
+          {
+            "type": "command",
+            "command": "for ctx in stories/*/CONTEXT.json; do if grep -q '\"status\": \"pending\"' \"$ctx\" 2>/dev/null; then dir=$(dirname \"$ctx\"); if [ -f \"$dir/REQUIREMENT.md\" ]; then echo \"💡 リマインダー: 実装前に $dir/REQUIREMENT.md を確認してください。\" >&2; break; fi; fi; done"
+          },
+          {
+            "type": "command",
+            "command": "TARGET=$(echo \"$CLAUDE_TOOL_INPUT\" | grep -o '\"file_path\"[[:space:]]*:[[:space:]]*\"[^\"]*\"' | head -1 | sed 's/.*\"\\([^\"]*\\)\"/\\1/'); if [ -n \"$TARGET\" ]; then case \"$TARGET\" in */data/*) echo '⚠️ ファイルアクセス境界: src/data/ は読み取り専用です。初期データの変更には明示的な指示が必要です。' >&2;; */REQUIREMENT.md) echo '⚠️ ファイルアクセス境界: REQUIREMENT.md は読み取り専用です。仕様変更は人間が行います。' >&2;; */PROJECT_RULES.md) echo '⚠️ ファイルアクセス境界: PROJECT_RULES.md は読み取り専用です。ルール変更は人間が行います。' >&2;; esac; fi"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "case \"$CLAUDE_TOOL_INPUT\" in *'--force-with-lease'*) ;; *'git reset --hard'*|*'git checkout .'*|*'git checkout -- .'*|*'git restore .'*|*'git clean -f'*|*'git push --force'*|*'git push -f '*|*'rm -rf'*) echo '🚫 破壊的な操作はブロックされました。CLAUDE.md のコマンド実行境界に従い、安全な操作を使用してください。' >&2; exit 2;; esac"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '📝 リマインダー: 作業完了時に /finish で CONTEXT.json を更新してください。'"
+          },
+          {
+            "type": "command",
+            "command": "for f in $(find src/ -name '*.ts' -o -name '*.tsx' 2>/dev/null); do if grep -q ': any' \"$f\" 2>/dev/null; then echo \"⚠️ PROJECT_RULES.md 違反: $f に 'any' 型が検出されました。'unknown' + 型ガードを使用してください。\" >&2; break; fi; done"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -q 'npm run build' 2>/dev/null; then if [ $CLAUDE_TOOL_EXIT_CODE -ne 0 ]; then echo '💡 ビルド失敗: エラーメッセージを確認し、コードを修正してから再実行してください。自動検証ループ: コード修正 → npx tsc --noEmit → npm run build' >&2; fi; fi"
+          }
+        ]
+      }
+    ]
+  }
+}
